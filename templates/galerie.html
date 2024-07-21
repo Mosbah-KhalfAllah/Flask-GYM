@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4"><span>Ga</span>lerie</h1>
+    <div class="row">
+        {% for image in images %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a href="{{ url_for('static', filename='images/' ~ image.filename) }}" data-toggle="lightbox" data-gallery="gallery" data-title="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/' ~ image.filename) }}" class="card-img-top img-fluid" alt="{{ image.title }}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ image.title }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

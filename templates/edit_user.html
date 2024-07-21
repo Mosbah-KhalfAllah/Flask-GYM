@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Utilisateur</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <a class="navbar-brand" href="/">Oxygen Gym</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4"><span>Modifier</span> Utilisateur</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control" value="{{ user.nom }}" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" class="form-control" value="{{ user.prenom }}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ user.email }}" required>
+            </div>
+            <div class="form-group">
+                <label for="tel">Téléphone</label>
+                <input type="text" id="tel" name="tel" class="form-control" value="{{ user.tel }}" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Rôle</label>
+                <select id="role" name="role" class="form-control" required>
+                    <option value="user" {% if user.role == 'user' %}selected{% endif %}>user</option>
+                    <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>admin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="abonnement">Abonnement</label>
+                <select id="abonnement" name="abonnement" class="form-control">
+                    <option value="">Aucun</option>
+                    <option value="Standard" {% if user.abonnement == 'standard' %}selected{% endif %}>Standard</option>
+                    <option value="Premium" {% if user.abonnement == 'premium' %}selected{% endif %}>Premium</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+        </form>
+    </div>
+
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <h5>&copy; 2024 Oxygen Gym. Tous droits réservés.</h5>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

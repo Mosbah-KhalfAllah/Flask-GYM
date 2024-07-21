@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5 border rounded p-4">
+    <h1 class="text-center mb-4"><span>Contactez-</span>nous</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="{{ url_for('contact') }}" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom <span>*</span></label>
+                    <input type="text" class="form-control" id="name" name="nom" placeholder="Entrez votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Entrez votre message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="map-container mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.3434482246334!2d8.79234357456994!3d34.41860139829889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f89655d15a4bfb%3A0xccf8f3b9d44af6b6!2sOxygen%20Gym!5e1!3m2!1sfr!2stn!4v1720994736889!5m2!1sfr!2stn" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

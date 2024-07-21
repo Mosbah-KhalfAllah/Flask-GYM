@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0 text-center">Inscription à Oxygen Gym</h4>
+                </div>
+                <div class="card-body">
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label for="nom" class="col-sm-3 col-form-label text-right">Nom <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom" required autocomplete="family-name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="prenom" class="col-sm-3 col-form-label text-right">Prénom <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom" required autocomplete="given-name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label text-right">Email <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tel" class="col-sm-3 col-form-label text-right">Téléphone <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Entrez votre téléphone" required autocomplete="tel">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="motdepasse" class="col-sm-3 col-form-label text-right">Mot de passe <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="Entrez votre mot de passe" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="confmotdepasse" class="col-sm-3 col-form-label text-right">Confirmer le mot de passe <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="confmotdepasse" name="confmotdepasse" placeholder="Confirmer le mot de passe" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Souscrire à l'abonnement <span>{{ abonnement }}</span></h1>
+    <form method="POST" action="{{ url_for('souscrire', abonnement=abonnement) }}">
+        <div class="form-group">
+            <label for="password">Confirmez votre souscription à l'abonnement {{ abonnement }}</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="mt-2">
+                        {% for category, message in messages %}
+                            {% if category == 'danger' %}
+                                <div class="alert alert-danger">{{ message }}</div>
+                            {% elif category == 'success' %}
+                                <div class="alert alert-success">{{ message }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <input type="submit" class="btn btn-primary btn-block" value="Confirmer">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="image-container">
+    <img src="{{ url_for('static', filename='images/cover.jpg') }}" class="img-fluid" alt="Responsive image">
+    <div class="overlay">
+        <h1>BIENVENUE À <span>Oxygen GYM</span></h1>
+        <p>Profitez de la différence avec <span>Oxygen Gym</span>, le sens du club de fitness
+            Plus de 20 ans d'expérience en Tunisie.</p>
+    </div>
+</div>
+
+<div class="gym-pic">
+    <h1>Oxygen <span>Gym</span></h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='images/gym-1.jpg') }}" alt="Gym Image">
+        <p>Profitez d'un cadre agréable, des espaces aérés et climatisés, des équipements de pointe et des coachs qualifiés pour vous encadrer, vous motiver et vous soutenir. <span>Oxygen Gym</span> est une salle de sport et de fitness qui vous propose des cours variés dans un espace de Fitness destiné aux adultes, ados et enfants. Vous trouverez tous ce qu'il vous faut dans nos <span>espaces de musculation</span> et <span>Cardio Training</span> avec un matériel de qualité.</p>
+    </div>
+</div>
+
+{% endblock %}

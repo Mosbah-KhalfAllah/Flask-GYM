@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Nos <span>Tarifs</span></h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card-deck mt-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title text-center mt-2">Abonnement Standard</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Inclus dans cet abonnement :</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Accès illimité à la salle de sport</li>
+                            <li class="list-group-item">Accès aux cours collectifs</li>
+                            <li class="list-group-item">Accès aux musculation</li>
+                            <li class="list-group-item">Conseils de nos experts en fitness</li>
+                        </ul>
+                        <p class="card-text mt-3 text-center font-weight-bold">Tarif : 50 DT/mois</p>
+                        <a href="{{ url_for('souscrire', abonnement='Standard') }}" class="btn btn-primary btn-block">Souscrire</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title text-center mt-2">Abonnement Premium</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Inclus dans cet abonnement :</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Accès illimité à tous nos services</li>
+                            <li class="list-group-item">Sessions de coaching personnel</li>
+                            <li class="list-group-item">Accès prioritaire aux équipements</li>
+                            <li class="list-group-item">Séances de nutrition personnalisée</li>
+                        </ul>
+                        <p class="card-text mt-3 text-center font-weight-bold">Tarif : 80 DT/mois</p>
+                        <a href="{{ url_for('souscrire', abonnement='Premium') }}" class="btn btn-success btn-block">Souscrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

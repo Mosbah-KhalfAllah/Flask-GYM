@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Nos <span>Services</span></h1>
+    <div class="row">
+        {% for service in services %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ url_for('static', filename='images/' + service.image) }}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

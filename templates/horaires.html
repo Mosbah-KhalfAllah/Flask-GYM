@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Horaires d'<span>Ouverture</span></h1>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card-deck mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/lundi.jpg') }}" alt="Lundi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Lundi</h5>
+                        <p class="card-text">6:00 - 22:00</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/mardi.jpg') }}" alt="Mardi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mardi</h5>
+                        <p class="card-text">6:00 - 22:00</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/mercredi.jpg') }}" alt="Mercredi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mercredi</h5>
+                        <p class="card-text">6:00 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-deck mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/jeudi.jpeg') }}" alt="Jeudi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Jeudi</h5>
+                        <p class="card-text">6:00 - 22:00</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/vendredi.jpg') }}" alt="Vendredi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Vendredi</h5>
+                        <p class="card-text">6:00 - 22:00</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{{ url_for('static', filename='images/samedi.png') }}" alt="Samedi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Samedi</h5>
+                        <p class="card-text">8:00 - 20:00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0 text-center">Profil Utilisateur</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/user-avatar.png') }}" alt="User Avatar" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Nom Complet</h5>
+                            <p>{{ user.prenom }} {{ user.nom }}</p>
+                            <h5>Email</h5>
+                            <p>{{ user.email }}</p>
+                            <h5>Téléphone</h5>
+                            <p>{{ user.tel }}</p>
+                            <a href="{{ url_for('edit_profil') }}" class="btn btn-primary">Modifier le profil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
